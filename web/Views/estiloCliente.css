@@ -1,0 +1,32 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 8 ago. 2022, 21:32:13
+    Author     : Ana Gatjens Campos
+*/
+
+/*Formato tabla cliente*/
+#customers {
+  font-family: Optima, Garamond, Comic Sans;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #E8F6F3;}
+
+#customers tr:hover {background-color: #16A085;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1ABC9C;
+  color: white;
+}

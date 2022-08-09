@@ -4,10 +4,21 @@
  */
 package Interfaces;
 
+import java.util.List;
+
 /**
  *
  * @author Ana Gatjens Campos
+ * @param <T>
  */
-public interface CRUD {
+public interface CRUD<T> {
+    public List listar();
     
+    public T getData(int id);
+  
+    public boolean add(T _objeto);
+    
+    public boolean edit(T _objeto);
+    
+    public boolean delete(int id);
 }
