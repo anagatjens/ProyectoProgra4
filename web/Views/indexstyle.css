@@ -1,0 +1,110 @@
+
+html{
+    box-sizing: border-box;
+    font-size: 60.5%;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+.img-fondo {
+background-image: url(/IMG/tienda.jpg);
+}
+img{
+    width: 100%;
+}
+.velo-negro {
+background-color:rgba(0, 0, 0, 0.5);
+}
+
+.header {
+display: flex;
+    justify-content: center;
+}
+.logo-img {
+    max-width: 40rem;
+    margin: 3rem 0;
+}
+.contenedor {
+max-width: 120rem;
+    margin: 0 auto;
+}
+nav{
+    margin: 3rem 0 8rem 0;
+    background-color: rgba(255, 55, 55, 0.768);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+}
+a{
+    text-decoration: none;
+}
+nav a:hover{
+    color: black;
+}
+.nuestros-productos {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.nuestros-productos {
+
+}
+
+.productos {
+display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.producto {
+ background-color: rgba(255, 55, 55, 0.768);
+    
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.producto-blanco {
+background-color: white;
+    height: 40rem;
+    object-fit: contain;
+    padding: 1rem;
+}
+.producto-precio,
+.producto-nombre{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.producto-informacion {
+
+}
+
+.producto-nombre {
+  font-size: 3rem;
+    font-weight: 800;
+}
+
+.producto-precio {
+font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.footer {
+ background-color: black;
+    padding: 3.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 2rem;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.enlace-footer {
+padding-left: 1rem;
+    padding-right: 1rem;
+}
