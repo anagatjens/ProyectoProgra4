@@ -17,7 +17,7 @@ public class Conexion {
         public Conexion(){
             try {
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=HotelOmega;integratedSecurity=true;encrypt=false;trustServerCertificate=false;");
+                con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Tienda;integratedSecurity=true;encrypt=false;trustServerCertificate=false;");
             } catch (ClassNotFoundException | SQLException e) {
                 System.err.println("Error"+e);
             }
