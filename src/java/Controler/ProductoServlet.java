@@ -10,8 +10,7 @@ package Controler;
  */
 
 
-import Model.Cliente;
-import ModelDAO.ProductoDAO;
+import Model.Producto;
 import ModelDAO.ProductoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,10 +32,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ProductoServlet", urlPatterns = {"/ProductoServlet"})
 public class ProductoServlet extends HttpServlet {
     ProductoDAO _productoDAO;
-    String listarClientePage="views/listCliente.jsp";
-    String addClientePage="views/addCliente.jsp";
-    String editClientePage="views/editCliente.jsp";
-    private final ProductoDAO _productoDAO;
+    String listarProductoPage="views/listProducto.jsp";
+    String addProductoPage="views/addProducto.jsp";
+    String editProductoPage="views/editProducto.jsp";
+   
     
     public ProductoServlet(){
         this._productoDAO = new ProductoDAO();
@@ -49,10 +48,10 @@ public class ProductoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ClienteServlet</title>");            
+            out.println("<title>Servlet ProductoServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ClienteServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ProductoServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -72,115 +71,111 @@ public class ProductoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action= request.getParameter("accion"); 
         
-        if(action.equalsIgnoreCase("listCliente")){        
+        if(action.equalsIgnoreCase("listProducto")){        
             try {
-                getListClients(request,response);
+                getListProducto(request,response);
             } catch (SQLException ex) {
-                Logger.getLogger(ClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(action.equalsIgnoreCase("addCliente")){           
+        }else if(action.equalsIgnoreCase("addProducto")){           
             try {
-                //acceso=addCliente;
-                setNewCliente(request,response);
+                //acceso=addProducto;
+                setNewProducto(request,response);
             } catch (SQLException ex) {
-                Logger.getLogger(ClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(action.equalsIgnoreCase("editCliente")){           
+        }else if(action.equalsIgnoreCase("editProducto")){           
             try {
-                //acceso=editCliente;
+                //acceso=editProducto;
                 showEditPage(request,response);
             } catch (SQLException ex) {
-                Logger.getLogger(ClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(action.equalsIgnoreCase("deleteCliente")){           
+        }else if(action.equalsIgnoreCase("deleteProducto")){           
             try {                
-                deleteCliente(request,response);
+                deleteProducto(request,response);
             } catch (SQLException ex) {
-                Logger.getLogger(ClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(action.equalsIgnoreCase("updateCliente")){           
+        }else if(action.equalsIgnoreCase("updateProducto")){           
             try {                
-                UpdateCliente(request,response);                                
+                UpdateProducto(request,response);                                
             } catch (SQLException ex) {
-                Logger.getLogger(ClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(action.equalsIgnoreCase("addClientePage")){           
-            RequestDispatcher vista= request.getRequestDispatcher(addClientePage);
+        }else if(action.equalsIgnoreCase("addProductoPage")){           
+            RequestDispatcher vista= request.getRequestDispatcher(addProductoPage);
             vista.forward(request,response);
-        }else if(action.equalsIgnoreCase("editClientePage")){
+        }else if(action.equalsIgnoreCase("editProductoPage")){
             try {
-                /*CARGAMOS DEL DAO EL CLIENTE SEGUN EL ID*/
-                loadCliente(request,response);
+                /*CARGAMOS DEL DAO EL PRODUCTO SEGUN EL ID*/
+                loadProducto(request,response);
             } catch (SQLException ex) {
-                Logger.getLogger(ClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
             }          
-            RequestDispatcher vista= request.getRequestDispatcher(editClientePage);
+            RequestDispatcher vista= request.getRequestDispatcher(editProductoPage);
             vista.forward(request,response);
         }
     }
     
-    private void getListClients(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+    private void getListProducto(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
         try { 
-            List<Cliente> _listCliente = _clienteDAO.listar();
-            request.setAttribute("listaClientes",_listCliente);
-            RequestDispatcher dispatcher = request.getRequestDispatcher(listarClientePage);
+            List<Producto> _listProducto = _productoDAO.listar();
+            request.setAttribute("listaProducto",_listProducto);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(listarProductoPage);
             dispatcher.forward(request, response);
         } catch (ServletException ex) {
-            Logger.getLogger(ClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
     
-    private void setNewCliente(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException{
+    private void setNewProducto(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException{
        
         String nombre =(String) request.getParameter("nombre");
-        String telefono =(String) request.getParameter("telefono");
-        String direccion =(String) request.getParameter("direccion");
-        String correo =(String) request.getParameter("correo");
-        String cedula =(String) request.getParameter("cedula");
-        String usuario =(String) request.getParameter("usuario");
-        Cliente _cliente = new Cliente(nombre, telefono, direccion, correo, cedula, usuario);
-        _clienteDAO.add(_cliente);
-        getListClients(request, response);
+        String categoria =(String) request.getParameter("categoria");
+        String precio =(String) request.getParameter("precio");
+        String descripcion =(String) request.getParameter("descripcion");
+        Producto _producto = new Producto(nombre, categoria, Double.parseDouble(precio), descripcion);
+        _productoDAO.add(_producto);
+        getListProducto(request, response);
     }
     
-    private void UpdateCliente(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException{
+    private void UpdateProducto(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException{
         String id =(String) request.getParameter("id");
         String nombre =(String) request.getParameter("nombre");
-        String telefono =(String) request.getParameter("telefono");
-        String direccion =(String) request.getParameter("direccion");
-        String correo =(String) request.getParameter("correo");
-        String cedula =(String) request.getParameter("cedula");
-        String usuario =(String) request.getParameter("usuario");
+        String categoria =(String) request.getParameter("categoria");
+        String precio =(String) request.getParameter("precio");
+        String descripcion =(String) request.getParameter("descripcion");
         
-        Cliente _cliente = new Cliente(Integer.parseInt(id), nombre, telefono, direccion, 
-                correo, cedula, usuario);
-        _clienteDAO.edit(_cliente);
-        getListClients(request, response);
+        Producto _producto = new Producto(Integer.parseInt(id), nombre, categoria, Double.parseDouble(precio), 
+                descripcion);
+        _productoDAO.edit(_producto);
+        getListProducto(request, response);
     }
     
-    private void deleteCliente(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+    private void deleteProducto(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
        int id =Integer.parseInt(request.getParameter("id"));
-       _clienteDAO.delete(id);
-      getListClients(request, response);
+       _productoDAO.delete(id);
+      getListProducto(request, response);
     }
     
     private void showEditPage(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
-            Cliente _cliente = (Cliente)_clienteDAO.getData(id);
-            RequestDispatcher dispatcher = request.getRequestDispatcher(editClientePage);
-            request.setAttribute("Cliente",_cliente);
+            Producto _producto = (Producto)_productoDAO.getData(id);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(editProductoPage);
+            request.setAttribute("Producto",_producto);
             dispatcher.forward(request, response);
         } catch (ServletException ex) {
-            Logger.getLogger(ClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    private void loadCliente(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+    private void loadProducto(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
         int id =Integer.parseInt(request.getParameter("id"));
-        Cliente _Cliente = (Cliente)_clienteDAO.getData(id);
-        request.setAttribute("_Cliente",_Cliente);
+        Producto _Producto = (Producto)_productoDAO.getData(id);
+        request.setAttribute("_Producto",_Producto);
     }
 }
 

@@ -8,7 +8,7 @@ package Model;
  *
  * @author Ana Gatjens Campos
  */
-public class Cliente {
+public class UsuarioAdministrador {
     private int id;
     private String cedula;
     private String nombre;
@@ -16,11 +16,12 @@ public class Cliente {
     private String direccion;
     private String correo;
     private String usuario;
+    private String contrasena;
 
-    public Cliente() {
+    public UsuarioAdministrador() {
     }
 
-    public Cliente(int id, String cedula, String nombre, String telefono, String direccion, String correo, String usuario) {
+    public UsuarioAdministrador(int id, String cedula, String nombre, String telefono, String direccion, String correo, String usuario, String contrasena) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -28,15 +29,17 @@ public class Cliente {
         this.direccion = direccion;
         this.correo = correo;
         this.usuario = usuario;
+        this.contrasena = contrasena;
     }
 
-    public Cliente(String cedula, String nombre, String telefono, String direccion, String correo, String usuario) {
+    public UsuarioAdministrador(String cedula, String nombre, String telefono, String direccion, String correo, String usuario, String contrasena) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
         this.correo = correo;
         this.usuario = usuario;
+        this.contrasena = contrasena;
     }
 
     public int getId() {
@@ -94,7 +97,12 @@ public class Cliente {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-    
-    
-    
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }   
 }
