@@ -115,3 +115,25 @@ nav a:hover{
     padding-left: 1rem;
     padding-right: 1rem;
 }
+.enlace-footer:hover {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.nosotros {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10rem;
+    margin-bottom: 20rem;
+}
+
+.nosotros-img {
+    background-color: white;
+    border-radius: 5%;
+}
+
+.nsotros-texto {
+    color: white;
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
