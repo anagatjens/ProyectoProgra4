@@ -26,6 +26,7 @@ public class UsuarioAdministradorDAO implements CRUD {
     ResultSet rs;
     UsuarioAdministrador _UsuarioAdministrador = new UsuarioAdministrador();
     
+    
     @Override
     public List listar() {
        ArrayList<UsuarioAdministrador>list = new ArrayList<>();
@@ -139,6 +140,31 @@ public class UsuarioAdministradorDAO implements CRUD {
         } catch (SQLException e) {
             return false;
         }
+    }
+
+    @Override
+    public int validar(Object _usuarioAdministradorObj) {
+        int r=0;
+        UsuarioAdministrador _usuarioAdministrador = (UsuarioAdministrador)_usuarioAdministradorObj;
+        String sql = "Select * from usuarioAdministrador where usuario=? and contrasena=?";
+        try{
+            con = cn.getConection();            
+            ps= con.prepareStatement(sql);
+            ps.setString(1, _usuarioAdministrador.getUsuario());
+            ps.setString(2, _usuarioAdministrador.getContrasena());
+            rs=ps.executeQuery();
+            while (rs.next()) {
+                r=r+1;
+                String usuario=rs.getString("Usuario");
+                String contrasena=rs.getString("Contrasena");         
+            }
+            if(r==1){
+                return 1;
+            }else{
+                return 0;
+            }
+        } catch(Exception e){}
+            return 0;
     }
     
 }

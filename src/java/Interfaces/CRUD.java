@@ -21,4 +21,7 @@ public interface CRUD<T> {
     public boolean edit(T _objeto);
     
     public boolean delete(int id);
+    
+    public int validar(T _objeto);
+    
 }

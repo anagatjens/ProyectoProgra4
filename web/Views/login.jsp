@@ -12,13 +12,22 @@
         <title>Formulario Login</title>
     </head>
     <body>
-        <section>
-            <h5>
-                Formulario Login
-                <input type="text" name="usuario" value="" placeholder="Usuario">
-                <input type="password" name="contrasena" value="" placeholder="Contrasena">
-                <input type="submit" name="contrasena" value="" placeholder="Ingresar">
-            </h5>
-        <section/>
+        <div>
+            <form action="pantalla1.jsp">
+                <div>
+                    <p><strong>Pagina Login Tienda Verduras</strong></p>
+                </div>
+                <div>
+                    <label>Usuario</label>
+                    <input type="text" name="txtUsu" placeholder="Ingrese el usuario">
+                </div>
+                <div>
+                    <label>Contraseña</label>
+                    <input type="password" name="txtCont" placeholder="Ingrese la contraseña">
+                </div>
+                <input type="submit" name="accion" value="Ingresar">
+            </form>
+        </div>
+
     </body>
 </html>

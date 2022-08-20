@@ -12,6 +12,18 @@
         <title>Pantalla 1</title>
     </head>
     <body>
+        <nav>
+            <div>
+                <a href="#" data-toggle="dropdown">Cerrar Sesion</a>
+                <div>
+                <a>${usu}</a>
+                <a href="UsuarioAdministradorServlet?accion=Salir">Salir</a>
+                <a></a>
+                
+                </div>
+            </div>    
+        </nav>
+        <div><h2>Bienvenido al sistema de administrador usuario ${usu}</h2></div>
          <div>
             <a href="UsuarioAdministradorServlet?accion=listUsuarioAdministrador">Lista de usuario administrador</a>            
         </div>

@@ -9,6 +9,7 @@ import ModelDAO.UsuarioAdministradorDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "UsuarioAdministradorServlet", urlPatterns = {"/UsuarioAdministradorServlet"})
 public class UsuarioAdministradorServlet extends HttpServlet {
     UsuarioAdministradorDAO _usuarioAdministradorDAO;
+    int r;
     String listarUsuarioAdministradorPage="views/listUsuarioAdministrador.jsp";
     String addUsuarioAdministradorPage="views/addUsuarioAdministrador.jsp";
     String editUsuarioAdministradorPage="views/editUsuarioAdministrador.jsp";
@@ -108,6 +110,12 @@ public class UsuarioAdministradorServlet extends HttpServlet {
             }          
             RequestDispatcher vista= request.getRequestDispatcher(editUsuarioAdministradorPage);
             vista.forward(request,response);
+        }else if(action.equalsIgnoreCase("Ingresar")){           
+            try {
+                validarLogin(request,response);
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioAdministradorServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
@@ -175,5 +183,25 @@ public class UsuarioAdministradorServlet extends HttpServlet {
         int id =Integer.parseInt(request.getParameter("id"));
         UsuarioAdministrador _UsuarioAdministrador = (UsuarioAdministrador)_usuarioAdministradorDAO.getData(id);
         request.setAttribute("_UsuarioAdministrador",_UsuarioAdministrador);
+    }
+    
+    private void validarLogin(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ServletException {
+        UsuarioAdministrador _usuarioAdministrador = new UsuarioAdministrador();
+        String accion=request.getParameter("accion");
+        if(accion.equals("Ingresar")){
+            String usu=request.getParameter("txtUsu");
+            String cont=request.getParameter("txtCont");
+            _usuarioAdministrador.setUsuario(usu);
+            _usuarioAdministrador.setContrasena(cont);
+            r=_usuarioAdministradorDAO.validar(_usuarioAdministrador);
+            if(r==1){
+                request.getSession().setAttribute("usu", usu);
+                request.getRequestDispatcher("Pantalla1.jsp").forward(request,response);
+            }else{
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+        }else{
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }   
     }
 }

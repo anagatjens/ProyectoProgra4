@@ -126,5 +126,10 @@ public class ProductoDAO implements CRUD {
         }
     }
     
+    @Override
+    public int validar(Object _producto) {
+            return 0;
+    }
+    
 }
 
