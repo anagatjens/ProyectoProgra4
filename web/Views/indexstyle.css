@@ -7,17 +7,17 @@ html{
     box-sizing: inherit;
 }
 .img-fondo {
-background-image: url(/IMG/tienda.jpg);
+    background-image: url(/IMG/tienda.jpg);
 }
 img{
     width: 100%;
 }
 .velo-negro {
-background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.5);
 }
 
 .header {
-display: flex;
+    display: flex;
     justify-content: center;
 }
 .logo-img {
@@ -25,7 +25,7 @@ display: flex;
     margin: 3rem 0;
 }
 .contenedor {
-max-width: 120rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 nav{
@@ -38,6 +38,13 @@ nav{
 }
 a{
     text-decoration: none;
+}
+nav a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
 }
 nav a:hover{
     color: black;
@@ -55,19 +62,19 @@ nav a:hover{
 }
 
 .productos {
-display: grid;
+    display: grid;
     grid-template-columns: repeat(3,1fr);
 }
 
 .producto {
- background-color: rgba(255, 55, 55, 0.768);
-    
+    background-color: rgba(255, 55, 55, 0.768);
+
     margin: 2rem;
     padding: 2rem;
 }
 
 .producto-blanco {
-background-color: white;
+    background-color: white;
     height: 40rem;
     object-fit: contain;
     padding: 1rem;
@@ -85,17 +92,17 @@ background-color: white;
 }
 
 .producto-nombre {
-  font-size: 3rem;
+    font-size: 3rem;
     font-weight: 800;
 }
 
 .producto-precio {
-font-size: 2.5rem;
+    font-size: 2.5rem;
     font-weight: 500;
 }
 
 .footer {
- background-color: black;
+    background-color: black;
     padding: 3.5rem;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 2rem;
@@ -105,6 +112,6 @@ font-size: 2.5rem;
 }
 
 .enlace-footer {
-padding-left: 1rem;
+    padding-left: 1rem;
     padding-right: 1rem;
 }
