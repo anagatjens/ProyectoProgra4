@@ -10,61 +10,173 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="normalize.css" rel="stylesheet" type="text/css"/>
-        <link href="Views/estiloIndex.css" rel="stylesheet" type="text/css"/>
-        <title>VRT</title>
+        <link href="Views/indexstyle.css" rel="stylesheet" type="text/css"/>
+        <title>La Verduleria</title>
     </head>
-    <body>
-       <div class="img-fondo">
+    <body background="IMG/fondo.jpeg">
+        <div class="img-fondo">
             <div class="velo-negro">
-                <!-- Cabecera del index -->  
+                <!--ESTE ES LA CABECERA DE NUESTRO DOCUMENTO INDEX-->
                 <header class="header">
-                    <a href="/index.html">
-                        <img src="Insertar nuestra imagen" alt="logo" class="logo-img">
+                    <a href="index.jsp">
+                        <img src="IMG/logo01.png" alt="Logo"/>
                     </a>
-                </header><!-- Aqui termina el header -->
+                </header>
+
                 <nav>
-                    <a href="/index.html">Tienda</a>
-                    <a href="/Nosotros.html">Nosotros</a>
+                    <a href="index.jsp">Inicio</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="Views/login.jsp">Login</a>
                 </nav>
-                <!--Comienzo del contenedor Principal  -->
+                <!--ESTE ES EL INICIO DEL CONTENIDO PRINCIPAL-->
                 <main class="contenedor">
                     <h1 class="nuestros-productos">Nuestros Productos</h1>
+
                     <div class="productos">
+
+
                         <div class="producto">
-                            <div class="producto-color">
-                                <img src="Insertar Imagen producto Aqui" alt="ImagenProducto1"/>
+                            <!-- producto 1 -->
+                            <div class="producto-blanco">
+                                <img src="IMG/2267284.jpg" alt="Manzana"/>
                             </div>
-                            <div class="Info-Producto">
-                                <p class="producto-nombre">nombre del producto1</p>
-                                <p class="precio-producto">$000</p>
+
+                            <div class="producto-informacion">
+                                <p class="producto-nombre">Manzana</p>
+                                <p class="producto-precio">₡200</p>
                             </div>
+
+                        </div>
+                        <!-- producto 2 -->
+                        <div class="producto">
+
+                            <div class="producto-blanco">
+                                <img src="IMG/Sweets_Ice_cream_Fruit_500178.jpg" alt=""/>
+
+                            </div>
+
+                            <div class="producto-informacion">
+                                <p class="producto-nombre">Helado</p>
+                                <p class="producto-precio">₡1200</p>
+                            </div>
+
+                        </div>
+                        <!-- producto 3 -->
+
+                        <div class="producto">
+
+                            <div class="producto-blanco">
+                                <img src="IMG/Aguacate.jpg" alt="Aguacate"/>
+
+                            </div>
+
+                            <div class="producto-informacion">
+                                <p class="producto-nombre">Aguacate</p>
+                                <p class="producto-precio">₡400</p>
+                            </div>
+
+                        </div>
+                        <!-- producto 4 -->
+                        <div class="producto">
+
+                            <div class="producto-blanco">
+                                <img src="IMG/piña.jpg" alt="Piña"/>
+
+                            </div>
+
+                            <div class="producto-informacion">
+                                <p class="producto-nombre">Piña</p>
+                                <p class="producto-precio">₡1000</p>
+                            </div>
+
+                        </div>
+                        <!-- producto 5 -->
+                        <div class="producto">
+
+                            <div class="producto-blanco">
+                                <img src="IMG/coconut-isolated-on-white-background-photo.jpg" alt=""/>
+                            </div>
+
+                            <div class="producto-informacion">
+                                <p class="producto-nombre">Coco</p>
+                                <p class="producto-precio">₡400</p>
+                            </div>
+
+                        </div>
+                        <!-- producto 6-->
+                        <div class="producto">
+
+                            <div class="producto-blanco">
+                                <img src="IMG/chayote-en-el-fondo-blanco-113104733.jpg" alt=""/>
+                            </div>
+
+                            <div class="producto-informacion">
+                                <p class="producto-nombre">Chayote</p>
+                                <p class="producto-precio">₡500</p>
+                            </div>
+
+                        </div>
+                        <!-- producto 7 -->
+                        <div class="producto">
+
+                            <div class="producto-blanco">
+                                <img src="IMG/Corn-Background-PNG-Image.png" alt=""/>
+                            </div>
+
+                            <div class="producto-informacion">
+                                <p class="producto-nombre">Elote</p>
+                                <p class="producto-precio">₡300</p>
+                            </div>
+
+                        </div>
+                        <!-- producto 8 -->
+                        <div class="producto">
+
+                            <div class="producto-blanco">
+                                <img src="IMG/LIME-2-768x768.jpg" alt=""/>
+                            </div>
+
+                            <div class="producto-informacion">
+                                <p class="producto-nombre">Lima Limon</p>
+                                <p class="producto-precio">₡50</p>
+                            </div>
+
+                        </div>
+                        <!-- producto 9 -->
+                        <div class="producto">
+
+                            <div class="producto-blanco">
+                                <img src="IMG/moje-la-fruta-anaranjada-aislada-en-el-camino-de-recortes-blanco-23331223.jpg" alt=""/>
+                            </div>
+
+                            <div class="producto-informacion">
+                                <p class="producto-nombre">Naranjas</p>
+                                <p class="producto-precio">₡150</p>
+                            </div>
+
                         </div>
                     </div>
-
                 </main>
-                <!--Final del contenedor   -->
-
-            </div> 
+            </div>
         </div>
         <footer class="footer">
             <a class="enlace-footer" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 226 226"
-                     style=" fill:#000000;">
-                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                   stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                   style="mix-blend-mode: normal">
-                <path d="M0,226v-226h226v226z" fill="#000000"></path>
-                <g fill="#ffffff">
-                <path
-                    d="M113,18.83333c-52.00825,0 -94.16667,42.15842 -94.16667,94.16667c0,52.00825 42.15842,94.16667 94.16667,94.16667c52.00825,0 94.16667,-42.15842 94.16667,-94.16667c0,-52.00825 -42.15842,-94.16667 -94.16667,-94.16667zM113,37.66667c41.60283,0 75.33333,33.7305 75.33333,75.33333c0,37.04891 -26.77936,67.78251 -62.01758,74.08269v-45.50163h22.27263l3.31054,-25.65673h-25.43603v-16.35042c-0.00001,-7.42034 2.06798,-12.43295 12.70882,-12.43295h13.4445v-22.89795c-6.54458,-0.66858 -13.11551,-0.99361 -19.69776,-0.97477c-19.53017,0 -32.90315,11.92003 -32.90315,33.80436v18.88851h-22.07031v25.65673h22.07031v45.52003c-35.40101,-6.16634 -62.34864,-36.97342 -62.34864,-74.13786c0,-41.60283 33.7305,-75.33333 75.33333,-75.33333z">
-                </path>
-                </g>
-                </g>
-                </svg>
-
-               
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 172 172"
-                         style=" fill:#000000;">
+                <a href="nosotros.html"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 226 226"
+                                             style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                       stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                       style="mix-blend-mode: normal">
+                    <path d="M0,226v-226h226v226z" fill="#000000"></path>
+                    <g fill="#ffffff">
+                    <path
+                        d="M113,18.83333c-52.00825,0 -94.16667,42.15842 -94.16667,94.16667c0,52.00825 42.15842,94.16667 94.16667,94.16667c52.00825,0 94.16667,-42.15842 94.16667,-94.16667c0,-52.00825 -42.15842,-94.16667 -94.16667,-94.16667zM113,37.66667c41.60283,0 75.33333,33.7305 75.33333,75.33333c0,37.04891 -26.77936,67.78251 -62.01758,74.08269v-45.50163h22.27263l3.31054,-25.65673h-25.43603v-16.35042c-0.00001,-7.42034 2.06798,-12.43295 12.70882,-12.43295h13.4445v-22.89795c-6.54458,-0.66858 -13.11551,-0.99361 -19.69776,-0.97477c-19.53017,0 -32.90315,11.92003 -32.90315,33.80436v18.88851h-22.07031v25.65673h22.07031v45.52003c-35.40101,-6.16634 -62.34864,-36.97342 -62.34864,-74.13786c0,-41.60283 33.7305,-75.33333 75.33333,-75.33333z">
+                    </path>
+                    </g>
+                    </g>
+                    </svg>
+                </a>
+                <a href="nosotros.html"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 172 172"
+                                             style=" fill:#000000;">
                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
                        style="mix-blend-mode: normal">
@@ -75,11 +187,9 @@
                     </path>
                     </g>
                     </g>
-                    </svg>
-             
-               
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 172 172"
-                         style=" fill:#000000;">
+                    </svg></a>
+                <a href="nosotros.html"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 172 172"
+                                             style=" fill:#000000;">
                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
                        style="mix-blend-mode: normal">
@@ -92,7 +202,7 @@
                     </g>
                     </svg>
                 </a>
-                <p>CopyRight© 2022-Todo los derechos reservados para BRV</p>
+                <p>CopyRight© 2022-Todo los derechos reservados para BRV,ARG,OMB</p>
         </footer>
 
     </body>
